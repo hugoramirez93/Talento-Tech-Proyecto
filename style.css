@@ -1,56 +1,118 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/270010/4bdbd33eb075f0c7d6d4d3e8a4065aa336b15b73.jpg');
+    background-size: cover;
 }
 
-.account, .register{
-    margin: 10px;
-    padding: 10px;
+body::before {
+    content: "";
+    position: fixed; /* Fixed so it covers the whole screen even if you scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 20, 0.65); /* Adjust color/opacity here */
+    z-index: 0;   /* Make sure it stays behind your content */
+    pointer-events: none; /* Allows clicks through the overlay */
+}
+
+.header, .contenedor {
+    position: relative;
+    z-index: 1;
+}
+
+.account, .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
     border-radius: 5px;
 }
 
-.header {margin: 2px;
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
-    height: 10vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
 }
 
-.logo img{
-    width: 50px;
-    height: 50px;
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.btn button {
+    background-color: rgb(55, 55, 55);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    font-size: 1.5vh;
+    font-weight: 500;
+}
+
+.account {
+    background-color: rgb(26, 26, 35);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5vh;
+}
+
+.header img {
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 25%;
 }
 
 .main-title {
-    display: grid;
-    background-color: red;
+    display: flex;
+    color: white;
+    font-weight: 500;
+    font-size: 2.5vh;
+    margin-left: 5px;
+    padding: 0;
+}
+
+.general {
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 10vh;
+    border: 2px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 73%;
+    height: 100%;
 }
 
-.contenedor{
-    width: 100vw;
-    height: 100vh;
-}
-
-.card {
-    background-color: rgb(167, 167, 228);
+.contenedor .card {
+    background-color: rgb(26, 26, 35);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 450px;
     border-radius: 10px;
+    box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 
-.title{
+.title {
+    font-size: 2vh;
+    color: white;
     display: flex;
     width: 100%;
     height: 15%;
@@ -58,24 +120,25 @@ body{
     justify-content: center;
 }
 
-.image{
+.card img {
     display: flex;
     justify-content: center ;
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    overflow: hidden;
+    height: 180px;
+    object-fit: contain;
 }
 
-.description{
+.description {
     display: flex;
     align-items: center;
-    justify-content: center;
+    font-weight: 500;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     width: 90%;
     height: 40%;
-    margin: 5px;
+    margin: 0;
     overflow: hidden;
-    font-size: 12px;
+    font-size: 1.3vh;
+    background-color: rgb(26, 26, 35);
+    text-transform: uppercase;
 }
 
