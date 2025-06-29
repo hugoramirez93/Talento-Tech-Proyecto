@@ -18,6 +18,11 @@ body::before {
     pointer-events: none; /* Allows clicks through the overlay */
 }
 
+.webpage {
+    display: flex;
+    justify-content: center;
+}
+
 .header, .contenedor {
     position: relative;
     z-index: 1;
@@ -42,54 +47,60 @@ body::before {
 }
 
 .btn {
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    padding: 5px;
+    margin: 5px 25px;
+    padding: 2px 25px;
     border-radius: 5px;
 }
 
 .btn button {
-    background-color: rgb(55, 55, 55);
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    color: white;
+    background-color: rgb(65, 62, 62);
+    border-radius: 4px;
+    padding: 5px 15px;
+    margin: 5px 0px;
     font-size: 1.5vh;
     font-weight: 500;
 }
 
-.account {
-    background-color: rgb(26, 26, 35);
+.account button {
     color: white;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
+    margin-right: 0;
+}
+
+.register button {
+    color: white;
+    font-size: 1.8vh;
+    margin-right: 0;
 }
 
 .header img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     align-items: center;
     justify-content: center;
-    margin-left: 0%;
+    margin: 5px 25px;
     margin-right: 25%;
 }
 
 .main-title {
+    width: 50%;
     display: flex;
     color: white;
+    align-items: center;
+    justify-content: center;
     font-weight: 500;
     font-size: 2.5vh;
     margin-left: 5px;
-    padding: 0;
+    padding: 5px 5px;
 }
 
 .general {
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
     display: flex;
     flex-wrap: wrap;
     width: 73%;
@@ -109,36 +120,99 @@ body::before {
     box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.5);
 }
 
+.contenedor .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 1px 15px rgb(212, 204, 211);
+}
 
 .title {
-    font-size: 2vh;
+    font-size: 3vh;
     color: white;
     display: flex;
-    width: 100%;
-    height: 15%;
+    width: 90%;
+    height: 10%;
     align-items: center;
     justify-content: center;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    text-shadow: 2px 2px 5px rgba(255, 0, 230, 0.8);
 }
 
 .card img {
+    object-fit: contain;
     display: flex;
     justify-content: center ;
-    height: 180px;
-    object-fit: contain;
+    width: 100%;
+    height: 200px;
+    margin: 0px;
+    padding: 0px;
+    overflow: cover;
 }
 
 .description {
-    display: flex;
     align-items: center;
-    font-weight: 500;
+    font-weight: 400;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     width: 90%;
     height: 40%;
-    margin: 0;
+    margin: 10px 10px;
+    padding: 10px 10px;
     overflow: hidden;
-    font-size: 1.3vh;
+    font-size: 1.5vh;
     background-color: rgb(26, 26, 35);
-    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
+
+
+.info-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 27%;
+    height: 100%;
+    margin: 25px 5px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.info-page img {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 150px;
+}
+
+.info-page .title-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 160px;
+    color: rgb(245, 59, 255);  
+    font-size: 6vh;
+    height: 60%;
+    text-shadow: 0px 0px 4px rgb(214, 23, 231, 0.7);
+
+}
+
+.info-page .description-info {
+    margin: 10px 60px;
+    font-size: 3vh;
+    color: white;
+    height: 40%;
+    text-shadow: 1px 1px 5px rgba(78, 36, 234, 0.4);  
+}
+
+.description span {
+    color: rgb(255, 55, 255);
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(42, 49, 246, 0.8);
+}
+
+
 
