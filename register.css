@@ -91,13 +91,14 @@ body::before {
 }
 
 .btn-general button {
-    margin: 020px 20px;
-    padding: 10px 25px;
+    margin: 20px 20px;
+    padding: 5px 25px;
     font-size: 2vh;
     font-weight: 500;
-    border-radius: 15px;
+    border-radius: 25px;
     color: white;
     background-color: rgb(65, 62, 62);
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.8);
     transition: 0.2s ease-in-out;
 }
 
@@ -107,16 +108,16 @@ body::before {
     color: black;
     background-color: rgba(245, 59, 255, 0.9);
     text-shadow: 0px 0px 24px rgb(214, 23, 231, 0.7);
-    box-shadow: px 0px 15px rgb(233, 9, 203);
+    box-shadow: 0px 0px 15px rgb(233, 9, 203);
 }
 
 .btn-general button:active {
     color: rgb(0, 0, 0);
     background-color: greenyellow;
-    text-shadow: 1px 1px 40px rgba(133, 36, 81, 0.9);
+    text-shadow: 0px 0px 10px rgba(133, 36, 81, 0.9);
 }
 
-.btn-cancel {
+.btn-cancel button {
     margin: 020px 20px;
     padding: 10px 25px;
     font-size: 2vh;
@@ -125,21 +126,6 @@ body::before {
     color: white;
     background-color: rgb(65, 62, 62);
     transition: 0.2s ease-in-out;    
-}
-
-.btn-cancel:hover {
-    transform: scale(1.045);
-    cursor: pointer;
-    color: black;
-    background-color: rgba(245, 59, 255, 0.9);
-    text-shadow: 0px 0px 24px rgb(214, 23, 231, 0.7);
-    box-shadow: 0px 0px 15px rgb(233, 9, 203);
-}
-
-.btn-cancel:active {
-    color: rgb(0, 0, 0);
-    background-color: greenyellow;
-    text-shadow: 1px 1px 40px rgba(133, 36, 81, 0.9);
 }
 
 
