@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/270010/4bdbd33eb075f0c7d6d4d3e8a4065aa336b15b73.jpg');
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Fixed so it covers the whole screen even if you scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 20, 0.65); /* Adjust color/opacity here */
+    z-index: 0;   /* Make sure it stays behind your content */
+    pointer-events: none; /* Allows clicks through the overlay */
+}
+
+.header {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100vw;
+    height: 20vh;
+    z-index: 1;
+    position: relative;
+    /* border: 1px solid white; */
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    width: 100%;
+    color: white;
+    z-index: 1;
+    position: relative;
+    color: rgba(255, 0, 221, 1);
+    text-shadow: 1px 1px 15px rgba(214, 23, 231, 0.5);
+    font-size: 6vh;
+}
+
+.registry {
+    display: grid;
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 50vh;
+    color: white;
+    overflow: auto;
+    /* border: 1px solid white; */
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.registry h3 {
+    font-size: 3vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin: 0px 20px;
+    padding: 0px 20px;
+}
+
+.registry input {
+    width: 20vw;
+    height: 3vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 25px;
+    padding: 5px 25px;
+    border-radius: 15px;
+    /* border: 1px solid white; */
+    overflow: visible;
+}
+
+.btn-general {
+    margin-top: 25px;
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 1;
+    position: relative;
+    /* border: 1px solid white; */
+}
+
+.btn-general button {
+    margin: 020px 20px;
+    padding: 10px 25px;
+    font-size: 2vh;
+    font-weight: 500;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(65, 62, 62);
+    transition: 0.2s ease-in-out;
+}
+
+.btn-general button:hover {
+    transform: scale(1.045);
+    cursor: pointer;
+    color: black;
+    background-color: rgba(245, 59, 255, 0.9);
+    text-shadow: 0px 0px 24px rgb(214, 23, 231, 0.7);
+    box-shadow: px 0px 15px rgb(233, 9, 203);
+}
+
+.btn-general button:active {
+    color: rgb(0, 0, 0);
+    background-color: greenyellow;
+    text-shadow: 1px 1px 40px rgba(133, 36, 81, 0.9);
+}
+
+.btn-cancel {
+    margin: 020px 20px;
+    padding: 10px 25px;
+    font-size: 2vh;
+    font-weight: 500;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(65, 62, 62);
+    transition: 0.2s ease-in-out;    
+}
+
+.btn-cancel:hover {
+    transform: scale(1.045);
+    cursor: pointer;
+    color: black;
+    background-color: rgba(245, 59, 255, 0.9);
+    text-shadow: 0px 0px 24px rgb(214, 23, 231, 0.7);
+    box-shadow: 0px 0px 15px rgb(233, 9, 203);
+}
+
+.btn-cancel:active {
+    color: rgb(0, 0, 0);
+    background-color: greenyellow;
+    text-shadow: 1px 1px 40px rgba(133, 36, 81, 0.9);
+}
+
+
+
+
+
+
+
