@@ -50,7 +50,7 @@ body::before {
     align-items: center;
     justify-content: center;
     color: rgba(255, 0, 221, 1);
-    text-shadow: 1px 1px 15px rgba(214, 23, 231, 0.9);
+    text-shadow: 0px 0px 10px rgba(214, 23, 231, 0.9);
     font-weight: 500;
     margin-left: 5px;
     padding: 5px 5px;
@@ -59,7 +59,7 @@ body::before {
 .header i {
     align-items: center;
     justify-content: center;
-    color: white;
+    color: white°;
     font-size: 6vh;
     margin-left: 200%;
     overflow: hidden;
@@ -171,7 +171,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 15px;
     width: 250px;
     height: 450px;
     border-radius: 10px;
@@ -193,25 +193,30 @@ body::before {
     align-items: center;
     margin: 10px;
     width: 250px;
-    height: 450px;
+    height: 500px;
     border-radius: 10px;
-    box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.5);
-    transition: all 1s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 
 
 .title {
     /* border: 1px solid white; */
-    font-size: 2.8vh;
+    font-size: 2.2vh;
     /* color: white; */
     display: flex;
     width: 92%;
-    height: 5%;
+    height: 10%;
     align-items: center;
     justify-content: space-evenly;
-    margin: 5px 0px;
-    padding: 10px 10px;
+    margin-top: -30px;
+    padding: 2px 2px;
     color: rgb(239, 208, 240);  
     text-shadow: 0px 0px 4px rgb(214, 23, 231, 0.7);
 
@@ -239,30 +244,12 @@ body::before {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 95%;
-    margin: 0px 0px;
+    margin-top: -30px;
     padding: 0px 0px;
     overflow: auto;
-    font-size: 1.3vh;
-    background-color: rgb(26, 26, 35);
-}
-
-.category {
-    width: 95%;
-    height: 5%;
-    margin: 2px 2px;
-    padding: 2px 2px;
-    font-size: 0.5vh;
-    background-color: rgb(26, 26, 35);
-}
-
-.category button {
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 76, 231, 0.815);
-    border-radius: 10px;
     font-size: 1.2vh;
-    font-weight: 300;
-    border: 2px solid black;
-    }
+    background-color: rgb(26, 26, 35);
+}
 
 .category-title {
     display: flex;
@@ -271,11 +258,30 @@ body::before {
     color: white;
     width: 95%;
     height: 5%;
-    margin: 2px 2px;
+    margin-top: -10px;
     padding: 2px 2px;
     font-size: 1.6vh;
     background-color: rgb(26, 26, 35);
 }
+.category {
+    width: 95%;
+    height: 2%;
+    margin: -5px 2px;
+    padding: 2px 2px;
+    font-size: 0.2vh;
+    background-color: rgb(26, 26, 35);
+}
+
+.category button {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 76, 231, 0.815);
+    border-radius: 10px;
+    font-size: 1vh;
+    font-weight: 300;
+    border: 2px solid black;
+    }
+
+
 
 
 .info-page {
