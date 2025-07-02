@@ -180,7 +180,7 @@ body::before {
 }
 
 .contenedor:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
     cursor: pointer;
     box-shadow: 1px 1px 15px rgb(233, 9, 203);
 }
