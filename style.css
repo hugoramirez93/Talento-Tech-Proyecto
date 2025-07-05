@@ -447,8 +447,8 @@ body::before {
     height: 60%;
     align-items: center;
     justify-content: center;
-    margin: 1px 1px;
-    padding: 1px 0px;
+    margin: 0px 1px;
+    padding: 20px 0px;
 }
 
 .add-game form {
