@@ -52,6 +52,20 @@ app.post('/api/juegos', async (req, res) => {
   }
 });
 
+app.put('/api/juegos/:id', async (req, res) => {
+  const id = req.params.id;
+  const { titulo, genero, fecha_lanzamiento, descripcion, imagen_url, url_descarga } = req.body;
+  try {
+    const result = await client.query(
+      'UPDATE "Juegos" SET titulo=$1, genero=$2, descripcion=$3, imagen_url=$4, url_descarga=$5 WHERE id=$6 RETURNING *',
+      [titulo, genero, descripcion, imagen_url, url_descarga, id]
+    );
+    res.json(result.rows[0]);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Ruta para eliminar juegos
 app.delete('/api/juegos/:id', async (req, res) => {
     const id = req.params.id;
@@ -62,6 +76,7 @@ app.delete('/api/juegos/:id', async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
+  
 
 // Haz que el servidor escuche el puerto 3000
 const PORT = 3000;

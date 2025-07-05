@@ -25,23 +25,8 @@
         </div>
     </div>
 
-    <div class="add-game">
-        <h2>Agregar un nuevo juego:</h2>
-        <form id="form-juego">
-            <input type="text" id="titulo" placeholder="Título" required>
-            <input type="text" id="genero" placeholder="Género" required>
-            <!-- <input type="date" id="fecha" placeholder="Fecha de lanzamiento"> -->
-            <input type="text" id="descripcion" placeholder="Descripción">
-            <input type="text" id="imagen_url" placeholder="URL de la imagen (opcional)">
-            <input type="text" id="url_descarga" placeholder="URL de descarga">
-            <button type="submit">Agregar Juego</button>
-        </form>
-        <div id="msg"></div>
-    </div>
-
-
-    Contenedor de tarjetas
-    <div class="webpage">
+    <!-- Contenedor de tarjetas -->
+    <div class="webpage">        
         <div class="general">
             <div class="contenedor">
                 <div class="card">
@@ -417,15 +402,16 @@
                     </div>
                     <div class="image">
                         <a href="https://www.worldofwarcraft.com/es-es" target="_blank">
-                            <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/04/world-warcraft.jpg?tf=3840x                            alt="">
+                            <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/04/world-warcraft.jpg?tf=3840x"
+                                alt="">
                         </a>
                     </div>
-                <div class=" description">
-                            <p>
-                                World of Warcraft’s greatest strength is its rich world-building and endless content.
-                                You should play it for the immersive lore, cooperative gameplay, and massive online
-                                world where every quest, raid, and character progression feels like an epic adventure.
-                            </p>
+                    <div class=" description">
+                        <p>
+                            World of Warcraft’s greatest strength is its rich world-building and endless content.
+                            You should play it for the immersive lore, cooperative gameplay, and massive online
+                            world where every quest, raid, and character progression feels like an epic adventure.
+                        </p>
                     </div>
                     <div class="category-title">
                         <h6>Categories:</h6>
@@ -446,13 +432,24 @@
 
 
         </div>
-
+        
         <div class="info-page">
+            <div class="add-game">
+                <h2>Agregar un nuevo juego:</h2>
+                <form id="form-juego">
+                    <input type="text" id="titulo" placeholder="Título" required>
+                    <input type="text" id="genero" placeholder="Género" required>
+                    <!-- <input type="date" id="fecha" placeholder="Fecha de lanzamiento"> -->
+                    <input type="text" id="descripcion" placeholder="Descripción">
+                    <input type="text" id="imagen_url" placeholder="URL de la imagen (opcional)">
+                    <input type="text" id="url_descarga" placeholder="URL de descarga">
+                    <button type="submit" class="btn-agregar">Agregar Juego</button>
+                </form>
+                <div id="msg"></div>
+            </div>
             <div class="title-info">
                 <h1>Game Library Guide</h1>
             </div>
-
-
 
             <div class="description-info">Steam is the world’s leading digital platform for PC gaming, known for its
                 massive game library, regular discounts, community features, and easy game management. Its most positive
@@ -460,11 +457,9 @@
                 centralizes your gaming experience with cloud saves, updates, mods, and a vibrant global community.
             </div>
 
-
             <div class="steam">
                 <a href="https://store.steampowered.com/" target="_blank">
                     <i class="fa-brands fa-square-steam"></i>
-
                 </a>
             </div>
         </div>
@@ -481,11 +476,11 @@
                 general.innerHTML = ''; // Limpia el contenido anterior
 
                 juegos.forEach(juego => {
-    const tarjeta = document.createElement('div');
-    tarjeta.className = 'contenedor';
+                    const tarjeta = document.createElement('div');
+                    tarjeta.className = 'contenedor';
 
-    // 1. Arma el contenido de la tarjeta en una variable
-    let contenidoCard = `
+                    // 1. Arma el contenido de la tarjeta en una variable
+                    let contenidoCard = `
       <div class="card">
         <div class="title"><h3>${juego.titulo}</h3></div>
         <div class="image">
@@ -507,25 +502,28 @@
       </div>
     `;
 
-    // 2. Si existe url_descarga, haz que toda la tarjeta sea un enlace
-    if (juego.url_descarga) {
-        tarjeta.innerHTML = `<a href="${juego.url_descarga}" target="_blank" style="text-decoration: none; color: inherit;">${contenidoCard}</a>`;
-    } else {
-        tarjeta.innerHTML = contenidoCard;
-    }
+                    // 2. Si existe url_descarga, haz que toda la tarjeta sea un enlace
+                    if (juego.url_descarga) {
+                        tarjeta.innerHTML = `<a href="${juego.url_descarga}" target="_blank" style="text-decoration: none; color: inherit;">${contenidoCard}</a>`;
+                    } else {
+                        tarjeta.innerHTML = contenidoCard;
+                    }
 
-    general.appendChild(tarjeta);
-});
+                    general.appendChild(tarjeta);
+                });
 
             })
             .catch(error => {
-                console.error('Error al cargar los juegos:', error);    
+                console.error('Error al cargar los juegos:', error);
             });
 
 
 
         document.getElementById('form-juego').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevenir que se recargue la página
+
+            if (!confirm('¿Seguro que quieres agregar este juego?'))
+                return;
 
             // Obtén los valores del formulario
             const titulo = document.getElementById('titulo').value;
@@ -573,51 +571,56 @@
                 });
         });
 
-        document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('btn-edit')) {
-            const id = e.target.getAttribute('data-id');
-            if (confirm('¿Seguro que quieres editar este juego?')) {
-            fetch(`http://localhost:3000/api/juegos/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    titulo,
-                    genero,
-                    // fecha_lanzamiento: fecha,
-                    descripcion,
-                    imagen_url,
-                    url_descarga
-                })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                location.reload();
-                } else {
-                alert('No se pudo editar');
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('btn-edit')) {
+                e.preventDefault();
+                e.stopPropagation();
+                const id = e.target.getAttribute('data-id');
+                if (confirm('¿Seguro que quieres editar este juego?')) {
+                    fetch(`http://localhost:3000/api/juegos/${id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            titulo,
+                            genero,
+                            // fecha_lanzamiento: fecha,
+                            descripcion,
+                            imagen_url,
+                            url_descarga
+                        })
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.success) {
+                                location.reload();
+                            } else {
+                                alert('No se pudo editar');
+                            }
+                        });
                 }
-            });
             }
-        }
         });
 
-        document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('btn-delete')) {
-            const id = e.target.getAttribute('data-id');
-            if (confirm('¿Seguro que quieres eliminar este juego?')) {
-            fetch(`http://localhost:3000/api/juegos/${id}`, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                location.reload();
-                } else {
-                alert('No se pudo eliminar');
+
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('btn-delete')) {
+                e.preventDefault();
+                e.stopPropagation();
+                const id = e.target.getAttribute('data-id');
+                if (confirm('¿Seguro que quieres eliminar este juego?')) {
+                    fetch(`http://localhost:3000/api/juegos/${id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.success) {
+                                location.reload();
+                            } else {
+                                alert('No se pudo eliminar');
+                            }
+                        });
                 }
-            });
             }
-        }
         });
 
 
