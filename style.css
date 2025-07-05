@@ -409,15 +409,15 @@ body::before {
 }
 .btn-delete {
     background-color: rgb(255, 94, 94);
-    border-radius: 10px;
+    border-radius: 4px;
     font-size: 1.7vh;
     font-weight: 300;
     border: 2px solid black;
     margin: 5px 10px;
 }
 .btn-edit {
-    background-color: rgba(198, 187, 245, 0.815);
-    border-radius: 10px;
+    background-color: rgb(247, 245, 255);
+    border-radius: 4px;
     font-size: 1.7vh;
     font-weight: 300;
     border: 2px solid black;
