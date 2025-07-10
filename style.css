@@ -19,8 +19,20 @@ body::before {
 }
 
 .webpage {
+    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
+}
+
+.general {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 }
 
 .header, .contenedor {
@@ -70,6 +82,42 @@ body::before {
     transform: scale(1.06);
     cursor: pointer;
 }
+
+.add-game {
+    background: rgba(30,30,40,0.9);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 250px;
+    color: white;
+  }
+  .add-game h2 {
+    margin-top: 0;
+  }
+  .add-game form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .add-game input, .add-game button {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ff00dd;
+  }
+  .add-game button {
+    background: #ff00dd;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .add-game button:hover {
+    background: #d400b7;
+  }
+  #msg {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+  
 
 .btn {
     width: 10%;
@@ -156,22 +204,16 @@ body::before {
     padding: 5px 5px;
 }
 
-.general {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    width: 73%;
-    height: 100%;
-}
+
 
 .contenedor {
+    position: relative;
     background-color: rgb(26, 26, 35);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 15px;
+    margin: 25px 15px;
     width: 250px;
     height: 450px;
     border-radius: 10px;
@@ -180,10 +222,10 @@ body::before {
 }
 
 .contenedor:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
     cursor: pointer;
     box-shadow: 1px 1px 15px rgb(233, 9, 203);
-}
+}       
 
 .card {
     background-color: rgb(26, 26, 35);
@@ -191,9 +233,8 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
     width: 250px;
-    height: 500px;
+    height: 450px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
     transition: all 0.5s ease-in-out;
@@ -285,14 +326,15 @@ body::before {
 
 
 .info-page {
+    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 27%;
+    width: 20%;
     height: 100%;
-    margin: 25px 5px;
-    padding: 5px;
+    margin: 1px 1px;
+    padding: 5px 5px;
     z-index: 1;
 }
 
@@ -358,6 +400,70 @@ body::before {
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
 }
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.btn-delete {
+    background-color: rgb(255, 94, 94);
+    border-radius: 4px;
+    font-size: 1.7vh;
+    font-weight: 300;
+    border: 2px solid black;
+    margin: 5px 10px;
+}
+.btn-edit {
+    background-color: rgb(247, 245, 255);
+    border-radius: 4px;
+    font-size: 1.7vh;
+    font-weight: 300;
+    border: 2px solid black;
+    margin: 5px 10px;
+}
+
+.add-game {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;   /* Fondo blanco sólido (puedes cambiarlo) */
+    border-radius: 10px;
+    border: 2px solid #ff00dd;
+    box-shadow: 0px 0px 16px rgba(255, 38, 237, 0.7);
+    height: 250px;
+    z-index: 1;
+}
+
+.add-game h2 {
+    margin: 0;
+    padding: 0px;
+    color: rgba(255, 0, 221, 1);
+    text-shadow: 1px 1px 15px rgba(214, 23, 231, 0.9);
+    font-size: 2vh;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 1px;
+    padding: 20px 0px;
+}
+
+.add-game form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1px 1px;
+    padding: 1px 0px;
+}
+
+
+
+
+
 
 
 
